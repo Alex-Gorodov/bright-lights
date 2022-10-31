@@ -1,0 +1,13 @@
+{
+  "name": "Bright Lights - a singer blog",
+  "short_name": "Bright Lights",
+  "start_url": ".",
+  "display": "standalone",
+  "prefer_related_applications": true,
+  "background_color": "#ffffff",
+  "theme_color": "#68b738",
+  "description": "Listen to new releases of artist.",
+  "icons": [
+    
+  ]
+}
