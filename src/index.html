@@ -11,7 +11,12 @@
   <header class="page__header header">
     <nav class="header__navigation navigation">
       <a class="navigation__logo logo" href="index.html">
-        <img src="img/logo.svg" alt="Logo" width="223" height="60">
+        <picture>
+          <source media="(min-width: 1110px)" srcset="img/logo.webp 1x, img/logo@2x.webp 2x" type="image/webp">
+          <source media="(min-width: 1110px)" srcset="img/logo.png 1x, img/logo@2x.png 2x">
+          <source srcset="img/logo.webp 1x, img/logo@2x.webp 2x" type="image/webp">
+          <img src="img/logo.png" width="223" height="60" alt="Bright Lights logo" class="logo__icon" srcset="img/logo@2x.png 2x">
+        </picture>
       </a>
       <ul class="navigation__list">
         <li class="navigation__item">
@@ -42,16 +47,54 @@
         <h2 class="visually-hidden">Fresh single section</h2>
         <span class="hero__pretitle">New single</span>
         <span class="hero__single-name">War for love</span>
-        <audio controls>
+        <audio class="hero__audio" controls>
           <source src="audio.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
         </audio>
-        <ul class="hero__news news">
-          <li class="news__item"></li>
-          <li class="news__item"></li>
-          <li class="news__item"></li>
-        </ul>
       </div>
+    </section>
+    <section class="main__news news">
+      <ul class="news-list">
+        <li class="news__item news-item">
+          <div class="news-item__wrapper">
+            <picture>
+              <source media="(min-width: 1110px)" srcset="img/news-1.webp 1x, img/news-1@2x.webp 2x" type="image/webp">
+              <source media="(min-width: 1110px)" srcset="img/news-1.jpg 1x, img/news-1.jpg@2x 2x">
+              <source srcset="img/news-1.webp 1x, img/news-1@2x.webp 2x" type="image/webp">
+              <img src="img/news-1.jpg" width="350" height="300" alt="On work!" class="news-item__image" srcset="img/new-1@2x 2x">
+            </picture>
+            <a class="news-item__text" href="#">
+              Working on my upcoming full-lenth<br> album that`s releasing later this year.
+            </a>
+          </div>
+        </li>
+        <li class="news__item news-item">
+          <div class="news-item__wrapper">
+            <picture>
+              <source media="(min-width: 1110px)" srcset="img/news-2.webp 1x, img/news-2@2x.webp 2x" type="image/webp">
+              <source media="(min-width: 1110px)" srcset="img/news-2.jpg 1x, img/news-2.jpg@2x 2x">
+              <source srcset="img/news-2.webp 1x, img/news-2@2x.webp 2x" type="image/webp">
+              <img src="img/news-2.jpg" width="350" height="300" alt="On work!" class="news-item__image" srcset="img/new-2@2x 2x">
+            </picture>
+            <a class="news-item__text" href="#">
+              Halloween vibes.<br> Listen my new track!
+            </a>
+          </div>
+        </li>
+        <li class="news__item news-item">
+          <div class="news-item__wrapper">
+            <picture>
+              <source media="(min-width: 1110px)" srcset="img/news-3.webp 1x, img/news-3@2x.webp 2x" type="image/webp">
+              <source media="(min-width: 1110px)" srcset="img/news-3.jpg 1x, img/news-3.jpg@2x 2x">
+              <source srcset="img/news-3.webp 1x, img/news-3@2x.webp 2x" type="image/webp">
+              <img src="img/news-3.jpg" width="350" height="300" alt="On work!" class="news-item__image" srcset="img/new-3@2x 2x">
+            </picture>
+            <a class="news-item__text" href="#">
+              WarForLove is <span class="news-item__text news-item__text--uppercase">out now</span>!!<br> Stream it here!
+            </a>
+          </div>
+        </li>
+      </ul>
     </section>
   </main>
   <footer class="page__footer footer">

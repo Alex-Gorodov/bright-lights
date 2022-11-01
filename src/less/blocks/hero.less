@@ -1,10 +1,16 @@
 .hero {
+  padding-bottom: 130px;
+
   &__container {
     display: flex;
     max-width: 1110px;
     margin: 0 auto;
     flex-direction: column;
     text-transform: capitalize;
+
+    @media (max-width: 420px) {
+      padding: 0 1em;
+    }
   }
 
   &__pretitle {
@@ -21,5 +27,9 @@
     color: transparent;
     -webkit-text-stroke-color: #ffffff;
     -webkit-text-stroke-width: 1px;
+  }
+
+  &__audio {
+    width: 100%;
   }
 }
