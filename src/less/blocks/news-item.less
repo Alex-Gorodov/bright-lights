@@ -1,4 +1,18 @@
 .news-item {
+  &:not(:last-of-type) {
+    margin-right: 30px;
+
+    @media (max-width: @touch) {
+      margin-bottom: 30px;
+      margin-right: 0;
+    }
+
+    @media (min-width: 740px) and (max-width: 1150px) {
+      margin-right: 30px;
+      margin-bottom: 30px;
+    }
+  }
+
   &__wrapper {
     max-width: 350px;
     position: relative;
@@ -30,7 +44,7 @@
     bottom: 0;
     left: 0;
     margin: 0;
-    padding: 1em;
+    padding: 2em 1em;
     padding-right: 0;
     border-radius: 20px 0;
     text-transform: capitalize;
