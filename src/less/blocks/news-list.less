@@ -1,9 +1,14 @@
 .news-list {
   display: flex;
-  margin: 0;
+  max-width: 1110px;
+  margin: 0 auto;
   padding: 0;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   list-style-type: none;
   gap: 30px;
+
+  @media (max-width: 769px) {
+    justify-content: center;
+  }
 }

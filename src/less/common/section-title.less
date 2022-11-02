@@ -1,0 +1,24 @@
+.section-title {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 72px;
+  color: #ffffff;
+
+  @media (max-width: @touch) {
+    font-size: 28px;
+    line-height: 42px;
+  }
+
+  &--stylized::before {
+    display: inline-block;
+    width: 64px;
+    height: 31px;
+    margin-right: 20px;
+    background-image: url("../img/title-stylized.svg");
+    background-size: 64px 31px;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    content: "";
+  }
+}
