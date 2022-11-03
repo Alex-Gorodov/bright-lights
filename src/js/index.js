@@ -10,12 +10,12 @@ navToggle.addEventListener('click', function() {
 let releazed = document.querySelector('.hero__audio');
 let playTime = document.querySelector('.hero__play-time');
 let playBtn = document.querySelector('.hero__btn-play');
-let curTime = document.querySelector('.hero__cur-time');
+let curTimeLine = document.querySelector('.hero__cur-time-line');
 let fullTime = document.querySelector('.hero__time-full');
 let isPlaying = false;
 
 releazed.onloadedmetadata = function() {
-  curTime.max = releazed.duration;
+  curTimeLine.max = releazed.duration;
   };
 
 releazed.ontimeupdate = function() {
@@ -23,6 +23,10 @@ releazed.ontimeupdate = function() {
   var hours = Math.floor(sec_num / 3600);
   var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
   var seconds = sec_num - (hours * 3600) - (minutes * 60);
+  if (seconds == 58) {
+    seconds = 0;
+    minutes++;
+  }
   seconds = Math.round(seconds);
 
   if (hours < 10) {
@@ -34,11 +38,14 @@ releazed.ontimeupdate = function() {
   if (seconds < 10) {
     seconds = "0"+seconds;
   } playTime.innerHTML = minutes+':'+seconds;
+  if (isPlaying) {
+    curTimeLine.value=releazed.currentTime;
+  }
 };
 
-curTime.onchange=function() {
+curTimeLine.onchange=function() {
   releazed.pause();
-  releazed.currentTime = curTime.value;
+  releazed.currentTime = curTimeLine.value;
   releazed.play();
 };
 
