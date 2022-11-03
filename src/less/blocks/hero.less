@@ -30,7 +30,7 @@
 
   &__audio-container {
     display: grid;
-    grid-template-columns: min-content auto min-content min-content min-content;
+    grid-template-columns: min-content auto 50px 20px 50px;
     grid-template-rows: 1fr;
     align-items: center;
   }
@@ -43,6 +43,7 @@
   }
 
   &__cur-time-line {
+    --value-percent: 0;
     display: block;
     margin-right: 45px;
     height: 2px;
@@ -53,14 +54,21 @@
     @media (max-width: @mobile) {
       margin-right: 20px;
     }
+
+    &::-webkit-slider-thumb {
+      appearance: none;
+      width: 2px;
+      height: 20px;
+      background: @secondary-color;
+      cursor: pointer;
+    }
   }
 
   &__btn-play {
-    width: 0;
-    height: 0;
+    width: 25px;
+    height: 30px;
     padding: 0;
     margin-right: 45px;
-    border-radius: 4px;
     background-color: transparent;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
@@ -70,6 +78,12 @@
 
     @media (max-width: @mobile) {
       margin-right: 20px;
+    }
+
+    &--pause {
+      border: none;
+      border-radius: 0;
+      background: linear-gradient(to right, @white 30%, transparent 30% 70%, @white 70% 100%);
     }
   }
 }
