@@ -54,17 +54,17 @@
         <h2 class="visually-hidden">Fresh single section</h2>
         <span class="section-title">New single</span>
         <span class="hero__single-name">War for love</span>
-        <audio class="hero__audio" controls>
-          <source src="audio.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-        </audio>
-        <button class="hero__btn-play" aria-label="play"></button>
-        <span class="hero__play-time">00:00</span>
-        <span class="hero__audio-line"></span>
-        <span class="hero__cur-time"></span>
-        <span class="hero__full-time">02:54</span>
-        <button class="hero__btn-volume" aria-label="mute"></button>
-        <input class="hero__input-volume" type="range" aria-label="change volume" min="0" max="100" step="1" value="80">
+        <div class="hero__audio-container">
+          <audio class="hero__audio">
+            <source src="audio.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <button class="hero__btn-play" aria-label="play"></button>
+          <span class="hero__audio-line"></span>
+          <span class="hero__cur-time"></span>
+          <span class="hero__play-time hero__time">00:00 - </span>
+          <span class="hero__full-time hero__time">02:54</span>
+        </div>
       </div>
     </section>
     <section class="main__news section news" id="news">

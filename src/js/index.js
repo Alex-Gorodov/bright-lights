@@ -12,8 +12,6 @@ let playTime = document.querySelector('.hero__play-time');
 let playBtn = document.querySelector('.hero__btn-play');
 let curTime = document.querySelector('.hero__cur-time');
 let fullTime = document.querySelector('.hero__time-full');
-let volumeBtn = document.querySelector('.hero__btn-volume');
-let volume = document.querySelector('.hero__input-volume');
 let isPlaying = false;
 
 releazed.onloadedmetadata = function() {
@@ -36,29 +34,12 @@ releazed.ontimeupdate = function() {
   if (seconds < 10) {
     seconds = "0"+seconds;
   } playTime.innerHTML = minutes+':'+seconds;
-  // if (isPlaying) curTime.textContent = releazed.currentTime;
-};
-
-volume.onchange=function() {
-  releazed.volume = volume.value;
 };
 
 curTime.onchange=function() {
   releazed.pause();
   releazed.currentTime = curTime.value;
   releazed.play();
-};
-
-volumeBtn.onclick = function() {
-  if(volume.value == 0) {
-    volume.value = 100;
-    releazed.volume = 100;
-    volumeBtn.ariaLabel='mute';
-  } else {
-    volume.value = 0;
-    releazed.volume = 0;
-    volumeBtn.ariaLabel='unmute';
-  }
 };
 
 playBtn.addEventListener("click", (a) => {
