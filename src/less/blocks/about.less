@@ -78,9 +78,12 @@
 
     @media (max-width: @touch) {
       grid-row: 3;
+      justify-self: center;
+    }
+
+    @media (max-width: @mobile) {
       grid-template-columns: repeat(6, 40px);
       grid-template-rows: repeat(9, 30px);
-      justify-self: center;
     }
   }
 
