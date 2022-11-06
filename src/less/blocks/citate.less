@@ -1,0 +1,57 @@
+.citate {
+  position: relative;
+  padding-bottom: 0;
+
+  @media (max-width: @mobile) {
+    margin-bottom: 320px;
+  }
+
+  &__wrapper {
+    padding: 50px 80px;
+    border: 1px solid @white;
+    border-radius: 30px 0;
+  }
+
+  &__text {
+    color: @white;
+    max-width: 460px;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 25px;
+
+    &::after {
+      display: block;
+      width: 100%;
+      height: 1px;
+      margin-top: 25px;
+      background-color: @white;
+      content: "";
+    }
+  }
+
+  &__author {
+    text-decoration: none;
+    color: @secondary-color;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  &__image {
+    position: absolute;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    border-radius: 30px 0;
+
+    @media (max-width: @mobile) {
+      width: 240px;
+      height: auto;
+      right: 40px;
+      top: 100%;
+      transform: translateY(-10%);
+    }
+  }
+}
+
