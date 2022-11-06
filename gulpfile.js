@@ -91,8 +91,7 @@ const copy = (done) => {
     'src/fonts/*.{woff2,woff}',
     'src/*.ico',
     'src/manifest.webmanifest.json',
-    'src/*.mp3',
-    'src/*.ogg',
+    'src/**/*.mp3',
   ], {
     base: 'src'
   })

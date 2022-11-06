@@ -8,6 +8,7 @@ navToggle.addEventListener('click', function() {
 
 // Audio
 let releazed = document.querySelector('.hero__audio');
+let playerSong = document.querySelector('.player__audio');
 let playTime = document.querySelector('.hero__play-time');
 let playBtn = document.querySelector('.hero__btn-play');
 let curTimeLine = document.querySelector('.hero__cur-time-line');

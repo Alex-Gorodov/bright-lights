@@ -3,13 +3,18 @@
   padding-bottom: 0;
 
   @media (max-width: @mobile) {
-    margin-bottom: 320px;
+    padding-bottom: 200px;
   }
 
   &__wrapper {
     padding: 50px 80px;
     border: 1px solid @white;
     border-radius: 30px 0;
+    margin-bottom: 100px;
+
+    @media (max-width: @mobile) {
+      padding: 50px 20px 180px;
+    }
   }
 
   &__text {
@@ -48,9 +53,9 @@
     @media (max-width: @mobile) {
       width: 240px;
       height: auto;
-      right: 40px;
-      top: 100%;
-      transform: translateY(-10%);
+      right: 50%;
+      top: 10%;
+      transform: translate(50%, 100%);
     }
   }
 }

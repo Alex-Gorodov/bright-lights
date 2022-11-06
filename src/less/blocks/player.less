@@ -1,0 +1,27 @@
+.player__track-list {
+  padding: 0;
+  list-style-type: none;
+  grid-column: 2;
+}
+
+.player__track-item {
+  color: @white;
+
+  &::before {
+    counter-increment: player;
+    content: "0" counter(player);
+    margin-right: 20px;
+    opacity: 0.5;
+    color: @white;
+    font-weight: initial;
+  }
+
+  &:not(:last-of-type) {
+    margin-bottom: 20px;
+  }
+}
+
+.player__track-item--active {
+  font-weight: 600;
+  color: @secondary-color;
+}

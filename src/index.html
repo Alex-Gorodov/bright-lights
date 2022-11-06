@@ -34,7 +34,7 @@
           <a class="navigation__link" href="#news">News</a>
         </li>
         <li class="navigation__item">
-          <a class="navigation__link" href="">Media</a>
+          <a class="navigation__link" href="#tracks">Media</a>
         </li>
         <li class="navigation__item">
           <a class="navigation__link" href="">Tours</a>
@@ -54,7 +54,7 @@
         <span class="hero__single-name">War for love</span>
         <div class="hero__audio-container">
           <audio class="hero__audio">
-            <source src="audio.mp3" type="audio/mpeg">
+            <source src="audio/hero.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
           <button class="hero__btn-play" aria-label="play"></button>
@@ -128,6 +128,7 @@
       </div>
     </section>
     <section class="section citate">
+      <h2 class="visually-hidden">Citate about Bright Lights</h2>
       <div class="citate__wrapper">
         <blockquote class="citate__text" cite="PopULove.net">“In an age where mainstream music is designed to be as
           easily consumed as possible, listening to Bright Lights is
@@ -140,6 +141,36 @@
         <source srcset="img/citate-img.webp 1x, img/citate-img@2x.webp 2x" type="image/webp">
         <img src="img/citate-img.jpg" width="370" height="483" alt="Bright Lights on MTV" class="citate__image" srcset="img/citate-img@2x.jpg 2x">
       </picture>
+    </section>
+    <section class="section tracks" id="tracks">
+      <h2 class="section-title section-title--stylized tracks__title">Last tracks</h2>
+      <div class="tracks__image-wrapper">
+        <picture>
+          <source srcset="img/tracks-image.webp 1x, img/tracks-image@2x.webp 2x" type="image/webp">
+          <img src="img/tracks-image.png" width="434" height="434" alt="Bright Lights DJ on work" class="tracks__picture" srcset="img/tracks-image@2x.png 2x">
+        </picture>
+      </div>
+      <div class="tracks__wrapper player">
+        <!-- <div class="hero__audio-container">
+          <audio class="player__audio">
+            <source src="audio/3Lau Feat. Bright Lights  -  How You Love Me.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <button class="hero__btn-play" aria-label="play"></button>
+          <input class="hero__cur-time-line" type="range" value="0" style="--value-percent:0;"></input>
+          <span class="hero__play-time hero__time">00:00</span>
+          <span class="hero__between-time hero__time"> - </span>
+          <span class="hero__full-time hero__time">03:27</span>
+        </div> -->
+        <ul class="player__track-list">
+          <li class="player__track-item player__track-item--active">3LAU, Bright Lights — How You Love Me</li>
+          <li class="player__track-item">Bright Lights, Kaleena Zanders, Kandy — War For Love</li>
+          <li class="player__track-item">Pink Is Punk, Benny Benassi, Bright Lights — Ghost</li>
+          <li class="player__track-item">Hardwell, Dyro, Bright Lights — Never Say Goodbye</li>
+          <li class="player__track-item">Zeds Dead, Dirtyphonics, Bright Lights — Where Are You Now</li>
+          <li class="player__track-item">Zedd, Bright Lights — Follow You Down</li>
+        </ul>
+      </div>
     </section>
   </main>
   <footer class="page__footer footer">
