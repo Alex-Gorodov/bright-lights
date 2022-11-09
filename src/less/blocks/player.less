@@ -1,27 +1,95 @@
-.player__track-list {
-  padding: 0;
-  list-style-type: none;
-  grid-column: 2;
-}
+.player {
+  &__cur-time-line {
+    --value-percent: 0;
+    display: block;
+    margin-right: 45px;
+    height: 2px;
+    appearance: none;
+    background-color: @white;
+    cursor: pointer;
 
-.player__track-item {
-  color: @white;
+    @media (max-width: @mobile) {
+      margin-right: 0;
+    }
 
-  &::before {
-    counter-increment: player;
-    content: "0" counter(player);
-    margin-right: 20px;
-    opacity: 0.5;
+    &::-webkit-slider-thumb {
+      appearance: none;
+      width: 2px;
+      height: 20px;
+      background: @secondary-color;
+      cursor: pointer;
+    }
+  }
+
+  &__time {
     color: @white;
-    font-weight: initial;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
   }
 
-  &:not(:last-of-type) {
-    margin-bottom: 20px;
-  }
-}
+  &__btn-play {
+    width: 25px;
+    height: 30px;
+    padding: 0;
+    margin-right: 45px;
+    background-color: transparent;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: none;
+    border-left: 25px solid @white;
+    cursor: pointer;
 
-.player__track-item--active {
-  font-weight: 600;
-  color: @secondary-color;
+    @media (max-width: @mobile) {
+      margin-right: 20px;
+    }
+
+    &--pause {
+      border: none;
+      border-radius: 0;
+      background: linear-gradient(to right, @white 30%, transparent 30% 70%, @white 70% 100%);
+    }
+  }
+
+  @media (max-width: @mobile) {
+    &__play-time {
+      grid-row: 2;
+      grid-column: 2;
+      justify-self: start;
+    }
+
+    &__full-time {
+      grid-row: 2;
+      grid-column: 2;
+      justify-self: end;
+    }
+  }
+
+  &__track-list {
+    padding: 0;
+    list-style-type: none;
+    grid-column: 2;
+  }
+
+  &__track-item {
+    color: @white;
+
+    &::before {
+      counter-increment: player;
+      content: "0" counter(player);
+      margin-right: 20px;
+      opacity: 0.5;
+      color: @white;
+      font-weight: initial;
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__track-item--active {
+    font-weight: 600;
+    color: @secondary-color;
+  }
 }

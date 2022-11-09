@@ -52,16 +52,16 @@
         <h2 class="visually-hidden">Fresh single section</h2>
         <span class="section-title">New single</span>
         <span class="hero__single-name">War for love</span>
-        <div class="hero__audio-container">
-          <audio class="hero__audio">
+        <div class="hero__audio-container player">
+          <audio class="hero__audio player__song" preload="metadata">
             <source src="audio/hero.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
-          <button class="hero__btn-play" aria-label="play"></button>
-          <input class="hero__cur-time-line" type="range" value="0" style="--value-percent:0;"></input>
-          <span class="hero__play-time hero__time">00:00</span>
-          <span class="hero__between-time hero__time"> - </span>
-          <span class="hero__full-time hero__time">02:54</span>
+          <button class="hero__btn-play player__btn-play" aria-label="play"></button>
+          <input class="hero__cur-time-line player__cur-time-line" type="range" value="0"></input>
+          <span class="hero__play-time player__time player__play-time">00:00</span>
+          <span class="hero__between-time player__time"> - </span>
+          <span class="hero__full-time player__time player__full-time">02:54</span>
         </div>
       </div>
     </section>
@@ -163,7 +163,7 @@
           <span class="hero__full-time hero__time">03:27</span>
         </div> -->
         <ul class="player__track-list">
-          <li class="player__track-item player__track-item--active">3LAU, Bright Lights — How You Love Me</li>
+          <li class="player__track-item">3LAU, Bright Lights — How You Love Me</li>
           <li class="player__track-item">Bright Lights, Kaleena Zanders, Kandy — War For Love</li>
           <li class="player__track-item">Pink Is Punk, Benny Benassi, Bright Lights — Ghost</li>
           <li class="player__track-item">Hardwell, Dyro, Bright Lights — Never Say Goodbye</li>
@@ -186,5 +186,6 @@
     </a>
   </footer>
   <script src="js/index.js"></script>
+  <script src="js/player.js"></script>
 </body>
 </html>
