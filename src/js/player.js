@@ -10,7 +10,7 @@ class Player {
     this.setTimeLineMax();
     this.playMusic();
     this.timeUpdate();
-    this.curTimeUpdate();
+    this.userTimeChange();
   }
 
   setTimeLineMax() {
@@ -35,7 +35,7 @@ class Player {
     });
   }
 
-  curTimeUpdate() {
+  userTimeChange() {
     this.timeLine.addEventListener('change', () => {
       this.audio.pause();
       this.audio.currentTime = this.timeLine.value;
