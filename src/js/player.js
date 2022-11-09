@@ -36,34 +36,33 @@ class Player {
   }
 
   curTimeUpdate() {
-    this.timeLine.addEventListener('onchange', () => {
+    this.timeLine.addEventListener('change', () => {
       this.audio.pause();
-      this.audio.currentTime = this.curTimeLine.value;
+      this.audio.currentTime = this.timeLine.value;
       this.audio.play();
     });
   }
 
   timeUpdate() {
-    this.audio.addEventListener('ontimeupdate',() => {
-      let sec_num = this.audio.currentTime;
-      let hours = Math.floor(sec_num / 3600);
-      let minutes = Math.floor((sec_num - (hours * 3600)) / 60);
-      let seconds = Math.round(sec_num - (hours * 3600) - (minutes * 60));
-
-      this.curTime.innerHTML = minutes + ':' + seconds;
+    this.audio.addEventListener('timeupdate',() => {
+      var sec_num = this.audio.currentTime;
+      var hours = Math.floor(sec_num / 3600);
+      var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+      var seconds = Math.round(sec_num - (hours * 3600) - (minutes * 60));
       if (seconds != 0 && seconds % 60 == 0) {
         seconds = 0;
         minutes++;
       }
       if (hours < 10) {
-        hours = "0" + hours;
+        hours = '0' + hours;
       }
       if (minutes < 10) {
-        minutes = "0" + minutes;
+        minutes = '0' + minutes;
       }
       if (seconds < 10) {
-        seconds = "0" + seconds;
+        seconds = '0' + seconds;
       }
+      this.curTime.innerText = minutes + ':' + seconds;
       if (this.isPlaying) {
         this.timeLine.value = this.audio.currentTime;
       }
@@ -85,3 +84,5 @@ const heroPlayer = new Player(
   document.querySelector('.player__play-time'),
   document.querySelector('.player__full-time')
 );
+
+console.log(heroPlayer);
