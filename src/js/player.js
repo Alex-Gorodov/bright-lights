@@ -10,7 +10,7 @@ class Player {
     this.setTimeLineMax();
     this.playMusic();
     this.timeUpdate();
-    this.userTimeChange();
+    this.userTimeMoving();
   }
 
   setTimeLineMax() {
@@ -21,25 +21,22 @@ class Player {
 
   playMusic() {
     this.playBtn.addEventListener('click', () => {
+      this.playBtn.classList.toggle('player__btn-play--pause');
       if(this.isPlaying) {
         this.audio.pause();
         this.isPlaying = false;
         this.playBtn.ariaLabel = 'play';
-        this.playBtn.classList.remove('player__btn-play--pause');
       } else {
         this.audio.play();
         this.isPlaying = true;
-        this.playBtn.classList.add('player__btn-play--pause');
         this.playBtn.ariaLabel = 'pause';
       }
     });
   }
 
-  userTimeChange() {
+  userTimeMoving() {
     this.timeLine.addEventListener('change', () => {
-      this.audio.pause();
       this.audio.currentTime = this.timeLine.value;
-      this.audio.play();
     });
   }
 
@@ -77,12 +74,10 @@ class Player {
 }
 
 const heroPlayer = new Player(
-  document.querySelector('.player'),
-  document.querySelector('.player__song'),
-  document.querySelector('.player__btn-play'),
-  document.querySelector('.player__cur-time-line'),
-  document.querySelector('.player__play-time'),
-  document.querySelector('.player__full-time')
+  document.querySelector('.hero__audio-container'),
+  document.querySelector('.hero__audio'),
+  document.querySelector('.hero__btn-play'),
+  document.querySelector('.hero__cur-time-line'),
+  document.querySelector('.hero__play-time'),
+  document.querySelector('.hero__full-time')
 );
-
-console.log(heroPlayer);
