@@ -79,6 +79,8 @@ class Player {
       });
     }
   }
+
+  // ADD here method for playing next song from an array of songs and stop when the last song played
 }
 
 const heroPlayer = new Player(
@@ -89,5 +91,3 @@ const heroPlayer = new Player(
   document.querySelector('.hero__play-time'),
   document.querySelector('.hero__full-time')
 );
-
-console.log(heroPlayer.audio.length);
