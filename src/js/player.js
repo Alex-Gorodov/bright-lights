@@ -36,6 +36,8 @@ class Player {
       } else {
         this.audio.play();
         this.isPlaying = true;
+        let tracks = Array.from(document.querySelectorAll('.tracks__item'));
+        tracks[0].classList.add('tracks__track-item--active');
         this.playBtn.ariaLabel = 'pause';
       }
     });
@@ -78,11 +80,27 @@ class Player {
         if (this.audioSource.length > 1) {
           this.audio.src = this.audioSource[this.songsCounter];
           this.playBtn.classList.toggle('player__btn-play--pause');
-          // this.audio.addEventListener('loadedmetadata', () => {
-            this.fullTime.innerHTML = `${Math.round(this.timeLine.max / 60)}:${Math.round(this.timeLine.max % 60)}`;
+          this.audio.addEventListener('loadedmetadata', () => {
+            this.fullTime.innerHTML = `${Math.floor(this.audio.duration / 60)}:${Math.floor(this.audio.duration % 60)}`;
             this.audio.play();
-          // });
+          });
+          let tracks = Array.from(document.querySelectorAll('.tracks__item'));
+          if (this.songsCounter < tracks.length) {
+            tracks[this.songsCounter].classList.add('tracks__track-item--active');
+          }
+          tracks[this.songsCounter - 1].classList.remove('tracks__track-item--active');
           this.songsCounter++;
+          if (this.songsCounter === this.audioSource.length + 1) {
+            this.audio.pause();
+            console.log('stopped');
+            tracks[this.songsCounter - 2].classList.remove('tracks__track-item--active');
+            console.log('uncolored');
+            this.setSource();
+            console.log('src');
+            this.songsCounter = 1;
+            tracks[this.songsCounter - 1].classList.add('tracks__track-item--active');
+            console.log('counter zero');
+          }
         }
       }
     });
