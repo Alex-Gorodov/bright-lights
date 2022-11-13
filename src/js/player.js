@@ -13,6 +13,7 @@ class Player {
     this.timeUpdate();
     this.userTimeMoving();
     this.setSource();
+    this.clickOnSong();
     this.songsCounter = 1;
   }
 
@@ -34,13 +35,41 @@ class Player {
         this.isPlaying = false;
         this.playBtn.ariaLabel = 'play';
       } else {
-        this.audio.play();
         this.isPlaying = true;
         let tracks = Array.from(document.querySelectorAll('.tracks__item'));
         tracks[0].classList.add('tracks__track-item--active');
+        for (let i = 0; i < tracks.length; i++) {
+          if (i != 0 && tracks[i].classList.contains('tracks__track-item--active')) {
+            tracks[0].classList.remove('tracks__track-item--active');
+            this.audio.play();
+          }
+        }
+        this.audio.play();
         this.playBtn.ariaLabel = 'pause';
       }
     });
+  }
+
+  clickOnSong() {
+    let tracks = Array.from(document.querySelectorAll('.tracks__item'));
+    if (this.audioSource.length > 1) {
+      for (let i = 0; i < tracks.length; i++) {
+        for (let j = 0; j < tracks.length; j++) {
+          tracks[i].addEventListener('click', () => {
+            tracks[j].classList.remove('tracks__track-item--active');
+            tracks[i].classList.add('tracks__track-item--active');
+            this.audio.src = this.audioSource[i];
+            this.audio.addEventListener('loadedmetadata', () => {
+              this.fullTime.innerHTML = `${Math.floor(this.audio.duration / 60)}:${Math.floor(this.audio.duration % 60)}`;
+              this.audio.play();
+            });
+            this.playBtn.classList.add('player__btn-play--pause');
+            this.playBtn.ariaLabel = 'play';
+            this.isPlaying = true;
+          });
+        }
+      }
+    }
   }
 
   userTimeMoving() {
@@ -85,6 +114,14 @@ class Player {
             this.audio.play();
           });
           let tracks = Array.from(document.querySelectorAll('.tracks__item'));
+          for (let i = 0; i < tracks.length; i++) {
+            tracks[i].addEventListener('click', () => {
+              console.log('clicked');
+              tracks[i].classList.add('tracks__track-item--active');
+              this.setSource(i);
+              this.audio.play();
+            });
+          }
           if (this.songsCounter < tracks.length) {
             tracks[this.songsCounter].classList.add('tracks__track-item--active');
           }
