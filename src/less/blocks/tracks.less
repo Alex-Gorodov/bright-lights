@@ -13,8 +13,12 @@
 
   &__container {
     display: grid;
-    grid-template-columns: min-content;
+    grid-template-columns: min-content auto 50px 20px 50px;
     align-items: center;
+
+    @media (max-width: @mobile) {
+      grid-template-columns: min-content;
+    }
   }
 
   &__title {

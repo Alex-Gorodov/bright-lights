@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="newest releases by Bright Lights">
   <title>Bright lights</title>
   <link rel="stylesheet" href="css/style.min.css">
 </head>
@@ -28,19 +29,19 @@
           <a class="navigation__link" href="#about">About</a>
         </li>
         <li class="navigation__item">
-          <a class="navigation__link" href="">Music</a>
+          <a class="navigation__link" href="#tracks">Music</a>
         </li>
         <li class="navigation__item">
           <a class="navigation__link" href="#news">News</a>
         </li>
         <li class="navigation__item">
-          <a class="navigation__link" href="#tracks">Media</a>
+          <a class="navigation__link" href="#media">Media</a>
         </li>
         <li class="navigation__item">
-          <a class="navigation__link" href="">Tours</a>
+          <a class="navigation__link" href="#tours">Tours</a>
         </li>
         <li class="navigation__item">
-          <a class="navigation__link" href="">Contacts</a>
+          <a class="navigation__link" href="#contacts">Contacts</a>
         </li>
       </ul>
     </nav>
@@ -57,7 +58,7 @@
             Your browser does not support the audio element.
           </audio>
           <button class="hero__btn-play player__btn-play" aria-label="play"></button>
-          <input class="hero__cur-time-line player__cur-time-line" type="range" value="0"></input>
+          <input class="hero__cur-time-line player__cur-time-line" aria-label="drag for sond rewind" name="hero-audio-time" type="range" value="0"></input>
           <span class="hero__play-time player__time player__play-time">00:00</span>
           <span class="player__time player__between-time"> - </span>
           <span class="hero__full-time player__time player__full-time">02:54</span>
@@ -122,8 +123,14 @@
         </ul>
       </div>
       <div class="about__images-wrapper">
-        <img class="about__image about__image--first" src="img/about-img-1.jpg" width="350" height="400" alt="DJ Bright Lights">
-        <img class="about__image about__image--second" src="img/about-img-2.jpg" width="350" height="400" alt="Car">
+        <picture>
+          <source srcset="img/about-img-1.webp 1x, img/about-img-1@2x.webp 2x" type="image/webp">
+          <img class="about__image about__image--first" src="img/about-img-1.jpg" width="350" height="400" alt="DJ Bright Lights" srcset="img/about-img-1@2x.jpg">
+        </picture>
+        <picture>
+          <source srcset="img/about-img-2.webp 1x, img/about-img-2@2x.webp 2x" type="image/webp">
+          <img class="about__image about__image--first" src="img/about-img-2.jpg" width="350" height="400" alt="DJ Bright Lights" srcset="img/about-img-2@2x.jpg">
+        </picture>
       </div>
     </section>
     <section class="section citate">
@@ -147,6 +154,7 @@
         <picture>
           <source srcset="img/tracks-image.webp 1x, img/tracks-image@2x.webp 2x" type="image/webp">
           <img src="img/tracks-image.png" width="434" height="434" alt="Bright Lights DJ on work" class="tracks__picture" srcset="img/tracks-image@2x.png 2x">
+          </picture>
         </picture>
       </div>
       <div class="tracks__container player">
@@ -154,7 +162,7 @@
           Your browser does not support the audio element.
         </audio>
         <button class="tracks__btn-play player__btn-play" aria-label="play"></button>
-        <input class="tracks__cur-time-line player__cur-time-line" type="range" value="0"></input>
+        <input class="tracks__cur-time-line player__cur-time-line" aria-label="drag for sond rewind" name="tracks-audio-time" type="range" value="0"></input>
         <span class="tracks__play-time player__time player__play-time">00:00</span>
         <span class="player__time player__between-time"> - </span>
         <span class="tracks__full-time player__time player__full-time">03:27</span>
