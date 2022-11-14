@@ -15,6 +15,7 @@
     display: grid;
     grid-template-columns: min-content auto 50px 20px 50px;
     align-items: center;
+    margin: 30px 0;
 
     @media (max-width: @mobile) {
       grid-template-columns: min-content;
@@ -27,7 +28,7 @@
     grid-column: 2;
 
     @media (max-width: @touch) {
-      margin-top: 20px;
+      margin: 30px 0;
       font-size: 1.5em;
       grid-column: 1;
     }
@@ -37,9 +38,10 @@
     grid-row: 1 / -1;
     padding: 0;
     margin: 0;
-    border: 18px solid fade(@secondary-color, 30%);
+    outline: 18px solid fade(@secondary-color, 30%);
     border-radius: 50%;
     z-index: -10;
+    aspect-ratio: 1;
 
     @media (max-width: @touch) {
       grid-row: 1;
@@ -68,7 +70,7 @@
     list-style-type: none;
     grid-column: 2;
 
-    @media (max-width: @mobile) {
+    @media (max-width: @touch) {
       grid-column: 1;
     }
   }
