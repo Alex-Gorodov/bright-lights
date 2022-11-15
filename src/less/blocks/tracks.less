@@ -90,7 +90,7 @@
 
     &::before {
       counter-increment: player;
-      content: "0" counter(player);
+      content: counters(player, "", decimal-leading-zero);
       margin-right: 20px;
       opacity: 0.5;
       color: @white;
