@@ -7,7 +7,7 @@
 
   @media (max-width: @touch) {
     justify-content: center;
-    grid-template-columns: min-content;
+    grid-template-columns: 1fr;
     grid-template-rows: repeat(4, min-content);
   }
 
@@ -29,7 +29,6 @@
 
     @media (max-width: @touch) {
       margin: 30px 0;
-      font-size: 1.5em;
       grid-column: 1;
     }
   }
@@ -38,13 +37,20 @@
     grid-row: 1 / -1;
     padding: 0;
     margin: 0;
-    outline: 18px solid fade(@secondary-color, 30%);
+    border: 18px solid fade(@secondary-color, 30%);
     border-radius: 50%;
     z-index: -10;
     aspect-ratio: 1;
 
     @media (max-width: @touch) {
       grid-row: 1;
+      max-width: 436px;
+      justify-self: center;
+    }
+
+    @media (max-width: @mobile) {
+      grid-row: 1;
+      max-width: 296px;
     }
   }
 
@@ -60,7 +66,7 @@
     }
 
     @media (max-width: @mobile) {
-      width: 200px;
+      width: 260px;
       height: auto;
     }
   }
