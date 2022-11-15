@@ -44,6 +44,7 @@ class Player {
             this.audio.play();
           }
         }
+        this.setSource();
         this.audio.play();
         this.playBtn.ariaLabel = 'pause';
       }
@@ -128,15 +129,10 @@ class Player {
           tracks[this.songsCounter - 1].classList.remove('tracks__track-item--active');
           this.songsCounter++;
           if (this.songsCounter === this.audioSource.length + 1) {
-            this.audio.pause();
-            console.log('stopped');
             tracks[this.songsCounter - 2].classList.remove('tracks__track-item--active');
-            console.log('uncolored');
-            this.setSource();
-            console.log('src');
+            this.playBtn.classList.remove('player__btn-play--pause');
+            this.audio.pause();
             this.songsCounter = 1;
-            tracks[this.songsCounter - 1].classList.add('tracks__track-item--active');
-            console.log('counter zero');
           }
         }
       }
@@ -147,7 +143,7 @@ class Player {
 const heroPlayer = new Player(
   document.querySelector('.hero__audio-container'),
   document.querySelector('.hero__audio'),
-  ['audio/war for love.mp3'],
+  ['audio/song-2.mp3'],
   document.querySelector('.hero__btn-play'),
   document.querySelector('.hero__cur-time-line'),
   document.querySelector('.hero__play-time'),
@@ -157,12 +153,12 @@ const heroPlayer = new Player(
 const tracksPlayer = new Player(
   document.querySelector('.tracks__audio-container'),
   document.querySelector('.tracks__audio'),
-  ['audio/3Lau Feat. Bright Lights  -  How You Love Me.mp3',
-    'audio/war for love.mp3',
-    'audio/Benny Benassi & Pink Is Punk feat. Bright Lights - Ghost (Razihel Remix).mp3',
-    'audio/Hardwell &amp; Dyro feat. Bright Lights — Never Say Goodbye (Radio Edit).mp3',
-    'audio/zeds_dead_and_dirtyphonics-where_are_you_now_feat_bright_lights.mp3',
-    'audio/Zedd, Bright Lightsm - Follow You Down (Original Mix).mp3'],
+  ['audio/song-1.mp3',
+    'audio/song-2.mp3',
+    'audio/song-3.mp3',
+    'audio/song-4.mp3',
+    'audio/song-5.mp3',
+    'audio/song-6.mp3'],
   document.querySelector('.tracks__btn-play'),
   document.querySelector('.tracks__cur-time-line'),
   document.querySelector('.tracks__play-time'),
