@@ -8,6 +8,7 @@
   "theme_color": "#68b738",
   "description": "Listen to new releases of artist.",
   "icons": [
-    
+    { "src": "img/favicons/192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "img/favicons/512.png", "type": "image/png", "sizes": "512x512" }
   ]
 }
