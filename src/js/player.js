@@ -44,7 +44,6 @@ class Player {
             this.audio.play();
           }
         }
-        this.setSource();
         this.audio.play();
         this.playBtn.ariaLabel = 'pause';
       }
@@ -67,6 +66,8 @@ class Player {
             this.playBtn.classList.add('player__btn-play--pause');
             this.playBtn.ariaLabel = 'play';
             this.isPlaying = true;
+            this.songsCounter = i + 1;
+            console.log(this.songsCounter);
           });
         }
       }
@@ -117,9 +118,8 @@ class Player {
           let tracks = Array.from(document.querySelectorAll('.tracks__item'));
           for (let i = 0; i < tracks.length; i++) {
             tracks[i].addEventListener('click', () => {
-              console.log('clicked');
               tracks[i].classList.add('tracks__track-item--active');
-              this.setSource(i);
+              this.setSource();
               this.audio.play();
             });
           }
@@ -128,6 +128,7 @@ class Player {
           }
           tracks[this.songsCounter - 1].classList.remove('tracks__track-item--active');
           this.songsCounter++;
+          console.log(this.songsCounter);
           if (this.songsCounter === this.audioSource.length + 1) {
             tracks[this.songsCounter - 2].classList.remove('tracks__track-item--active');
             this.playBtn.classList.remove('player__btn-play--pause');
