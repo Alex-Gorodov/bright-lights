@@ -1,0 +1,44 @@
+.tours {
+  position: relative;
+
+  &__buttons-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .tours__button {
+    position: absolute;
+    padding: 21px 10px;
+    background: none;
+    border: 1px solid @white;
+    border-radius: 10px 0;
+    opacity: 0.5;
+    cursor: pointer;
+
+    &--prev {
+      left: -40px;
+    }
+
+    &--forward {
+      right: -40px;
+    }
+  }
+
+  .tours__button-icon--forward {
+    transform: rotate(180deg);
+  }
+
+  .tours__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 30px;
+    list-style-type: none;
+    padding: 0;
+  }
+}
