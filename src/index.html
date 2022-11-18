@@ -62,7 +62,7 @@
             Your browser does not support the audio element.
           </audio>
           <button class="hero__btn-play player__btn-play" aria-label="play"></button>
-          <input class="hero__cur-time-line player__cur-time-line" aria-label="drag for sond rewind" name="hero-audio-time" type="range" value="0"></input>
+          <input class="hero__cur-time-line player__cur-time-line" aria-label="drag for sond rewind" name="hero-audio-time" type="range" value="0">
           <span class="hero__play-time player__time player__play-time">00:00</span>
           <span class="player__time player__between-time"> - </span>
           <span class="hero__full-time player__time player__full-time">02:54</span>
@@ -158,7 +158,6 @@
         <picture>
           <source srcset="img/tracks-image.webp 1x, img/tracks-image@2x.webp 2x" type="image/webp">
           <img src="img/tracks-image.png" width="434" height="434" alt="Bright Lights DJ on work" class="tracks__picture" srcset="img/tracks-image@2x.png 2x">
-          </picture>
         </picture>
       </div>
       <div class="tracks__container player">
@@ -166,21 +165,22 @@
           Your browser does not support the audio element.
         </audio>
         <button class="tracks__btn-play player__btn-play" aria-label="play"></button>
-        <input class="tracks__cur-time-line player__cur-time-line" aria-label="drag for sond rewind" name="tracks-audio-time" type="range" value="0"></input>
+        <input class="tracks__cur-time-line player__cur-time-line" aria-label="drag for sond rewind" name="tracks-audio-time" type="range" value="0">
         <span class="tracks__play-time player__time player__play-time">00:00</span>
         <span class="player__time player__between-time"> - </span>
         <span class="tracks__full-time player__time player__full-time">03:27</span>
       </div>
       <ul class="tracks__list">
-        <li class="tracks__item player__track-item">3LAU, Bright Lights — How You Love Me</li>
-        <li class="tracks__item player__track-item">Bright Lights, Kaleena Zanders, Kandy — War For Love</li>
-        <li class="tracks__item player__track-item">Pink Is Punk, Benny Benassi, Bright Lights — Ghost</li>
-        <li class="tracks__item player__track-item">Hardwell, Dyro, Bright Lights — Never Say Goodbye</li>
-        <li class="tracks__item player__track-item">Zeds Dead, Dirtyphonics, Bright Lights — Where Are You Now</li>
-        <li class="tracks__item player__track-item">Zedd, Bright Lights — Follow You Down</li>
+        <li class="tracks__item">3LAU, Bright Lights — How You Love Me</li>
+        <li class="tracks__item">Bright Lights, Kaleena Zanders, Kandy — War For Love</li>
+        <li class="tracks__item">Pink Is Punk, Benny Benassi, Bright Lights — Ghost</li>
+        <li class="tracks__item">Hardwell, Dyro, Bright Lights — Never Say Goodbye</li>
+        <li class="tracks__item">Zeds Dead, Dirtyphonics, Bright Lights — Where Are You Now</li>
+        <li class="tracks__item">Zedd, Bright Lights — Follow You Down</li>
       </ul>
     </section>
     <section class="section gallery" id="media">
+      <h2 class="visually-hidden">Gallery</h2>
       <ul class="gallery__list">
         <li class="gallery__item gallery__item--big-vertical">
           <picture>
@@ -216,6 +216,7 @@
       </ul>
     </section>
     <section class="section tours" id="tours">
+      <h2 class="visually-hidden">Tours shedule</h2>
       <div class="tours__buttons-wrapper">
         <button class="tours__button tours__button--prev" aria-label="spin back">
           <svg class="tours__button-icon" width="20" height="8" fill="currentColor">
@@ -237,7 +238,7 @@
           <div class="tours-card__text-wrapper">
             <p class="tours-card__city">Chandler, AZ</p>
             <p class="tours-card__club">The Park at Wild Horse Pass</p>
-            <date class="tours-card__date">Apr 02 2021</date>
+            <p class="tours-card__date">Apr 02 2021</p>
           </div>
           <a href="#" class="tours-card__button">tickets</a>
         </li>
@@ -249,7 +250,7 @@
           <div class="tours-card__text-wrapper">
             <p class="tours-card__city">Ibiza, IBZ</p>
             <p class="tours-card__club">Swag Ibiza Club</p>
-            <date class="tours-card__date">Jul 08 2021</date>
+            <p class="tours-card__date">Jul 08 2021</p>
           </div>
           <a href="#" class="tours-card__button">tickets</a>
         </li>
@@ -261,7 +262,7 @@
           <div class="tours-card__text-wrapper">
             <p class="tours-card__city">Ibiza, IBZ</p>
             <p class="tours-card__club">El Swing Ibiza</p>
-            <date class="tours-card__date">Jul 10 2021</date>
+            <p class="tours-card__date">Jul 10 2021</p>
           </div>
           <a href="#" class="tours-card__button">tickets</a>
         </li>
@@ -279,6 +280,60 @@
         <img src="img/logo-text.png" width="143" height="42" alt="Bright lights" class="footer__logo-text logo__text" srcset="img/logo-text@2x.png 2x">
       </picture>
     </a>
+    <ul class="footer__contacts-list">
+      <li class="footer__contacts-item">
+        <p class="footer__contacts-name">Artist Management:</p>
+        <p class="footer__contacts-value">Jake Henny</p>
+      </li>
+      <li class="footer__contacts-item">
+        <p class="footer__contacts-name">email:</p>
+        <a class="footer__contacts-value" href="mailto:jake@brightlightsofficial.com">jake@brightlightsofficial.com</a>
+      </li>
+    </ul>
+    <ul class="footer__social-list">
+      <li class="footer__social-item">
+        <a class="footer__social-link" href="#" aria-label="Bright Lights on Apple Music" target="_blank" rel="noopener nofollow">
+          <svg class="footer__social-icon" width="24" height="24" fill="currentColor">
+            <use href="img/sprite.svg#apple"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="footer__social-item">
+        <a class="footer__social-link" href="#" aria-label="Bright Lights on Spotify" target="_blank" rel="noopener nofollow">
+          <svg class="footer__social-icon" width="24" height="24" fill="currentColor">
+            <use href="img/sprite.svg#spotify"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="footer__social-item">
+        <a class="footer__social-link" href="#" aria-label="Bright Lights in Instagram" target="_blank" rel="noopener nofollow">
+          <svg class="footer__social-icon" width="24" height="24" fill="currentColor">
+            <use href="img/sprite.svg#instagram"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="footer__social-item">
+        <a class="footer__social-link" href="#" aria-label="Bright Lights in Youtube" target="_blank" rel="noopener nofollow">
+          <svg class="footer__social-icon" width="24" height="24" fill="currentColor">
+            <use href="img/sprite.svg#youtube"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="footer__social-item">
+        <a class="footer__social-link" href="#" aria-label="Bright Lights in Twitter" target="_blank" rel="noopener nofollow">
+          <svg class="footer__social-icon" width="24" height="24" fill="currentColor">
+            <use href="img/sprite.svg#twitter"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="footer__social-item">
+        <a class="footer__social-link" href="#" aria-label="Bright Lights in Facebook" target="_blank" rel="noopener nofollow">
+          <svg class="footer__social-icon" width="24" height="24" fill="currentColor">
+            <use href="img/sprite.svg#facebook"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
     <span class="footer__copyright">©  2020 DJ bright lights.</span>
   </footer>
   <script src="js/index.js"></script>
