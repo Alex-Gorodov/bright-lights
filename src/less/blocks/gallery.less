@@ -1,17 +1,3 @@
-@keyframes run {
-  0% {
-    transform: translateX(0);
-  }
-
-  50% {
-    transform: translateX(-220%);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-}
-
 .gallery {
   &__list {
     display: grid;
@@ -21,14 +7,6 @@
     list-style-type: none;
     padding: 0;
     margin: 0;
-
-    @media (max-width: @mobile) {
-      animation-name: run;
-      animation-duration: 8s;
-      animation-iteration-count: infinite;
-      animation-timing-function: ease-in-out;
-      animation-fill-mode: forwards;
-    }
   }
 
   &__item {
