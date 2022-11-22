@@ -1,11 +1,12 @@
 .player {
   &__cur-time-line {
-    --value-percent: 0;
     display: block;
     margin-right: 45px;
     height: 2px;
     appearance: none;
-    background-color: @white;
+    background-image: linear-gradient(to right, @secondary-color 100%, @white);
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
     cursor: pointer;
 
     @media (max-width: @mobile) {

@@ -77,6 +77,7 @@ class Player {
   userTimeMoving() {
     this.timeLine.addEventListener('change', () => {
       this.audio.currentTime = this.timeLine.value;
+      this.timeLine.style.backgroundSize = `${(this.timeLine.value - this.timeLine.min) * 100 / (this.timeLine.max - this.timeLine.min)}% 100%`;
     });
   }
 
@@ -137,6 +138,7 @@ class Player {
           }
         }
       }
+      this.timeLine.style.backgroundSize = `${(this.timeLine.value - this.timeLine.min) * 100 / (this.timeLine.max - this.timeLine.min)}% 100%`;
     });
   }
 }
