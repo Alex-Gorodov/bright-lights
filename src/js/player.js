@@ -183,4 +183,3 @@ const tracksPlayer = new Player(
 );
 
 players.push(heroPlayer, tracksPlayer);
-console.log(players.length);
