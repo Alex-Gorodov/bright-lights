@@ -16,6 +16,7 @@ class Player {
     this.userTimeMoving();
     this.setSource();
     this.clickOnSong();
+    this.pauseOther();
     this.songsCounter = 1;
   }
 
@@ -29,22 +30,26 @@ class Player {
     });
   }
 
-  playMusic() {
-    this.playBtn.addEventListener('click', () => {
-      for (let i = 0; i < players.length; i++) {
+  pauseOther() {
+    for (let i = 0; i < players.length; i++) {
+      if (players[i].isPlaying) {
         players[i].audio.pause();
-        if (players[i].playBtn.classList.contains('player__btn-play--pause')) {
-          players[i].playBtn.classList.toggle('player__btn-play--pause');
-        }
+        players[i].playBtn.classList.toggle('player__btn-play--pause');
         players[i].isPlaying = false;
         players[i].playBtn.ariaLabel = 'play';
       }
+    }
+  }
+
+  playMusic() {
+    this.playBtn.addEventListener('click', () => {
       this.playBtn.classList.toggle('player__btn-play--pause');
       if(this.isPlaying) {
         this.audio.pause();
         this.isPlaying = false;
         this.playBtn.ariaLabel = 'play';
       } else {
+        this.pauseOther();
         this.isPlaying = true;
         let tracks = Array.from(document.querySelectorAll('.tracks__item'));
         tracks[0].classList.add('tracks__track-item--active');
@@ -66,12 +71,7 @@ class Player {
       for (let i = 0; i < tracks.length; i++) {
         for (let j = 0; j < tracks.length; j++) {
           tracks[i].addEventListener('click', () => {
-            for (let i = 0; i < players.length; i++) {
-              players[i].audio.pause();
-              if (players[i].playBtn.classList.contains('player__btn-play--pause')) {
-                players[i].playBtn.classList.toggle('player__btn-play--pause');
-              }
-            }
+            this.pauseOther();
             tracks[j].classList.remove('tracks__track-item--active');
             tracks[i].classList.add('tracks__track-item--active');
             this.audio.src = this.audioSource[i];
