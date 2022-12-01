@@ -1,3 +1,5 @@
+let players = [];
+
 class Player {
   constructor(parentSelector, audio, audioSource, playBtn, timeLine, curTime, fullTime) {
     this.parent = parentSelector;
@@ -29,6 +31,14 @@ class Player {
 
   playMusic() {
     this.playBtn.addEventListener('click', () => {
+      for (let i = 0; i < players.length; i++) {
+        players[i].audio.pause();
+        if (players[i].playBtn.classList.contains('player__btn-play--pause')) {
+          players[i].playBtn.classList.toggle('player__btn-play--pause');
+        }
+        players[i].isPlaying = false;
+        players[i].playBtn.ariaLabel = 'play';
+      }
       this.playBtn.classList.toggle('player__btn-play--pause');
       if(this.isPlaying) {
         this.audio.pause();
@@ -56,6 +66,12 @@ class Player {
       for (let i = 0; i < tracks.length; i++) {
         for (let j = 0; j < tracks.length; j++) {
           tracks[i].addEventListener('click', () => {
+            for (let i = 0; i < players.length; i++) {
+              players[i].audio.pause();
+              if (players[i].playBtn.classList.contains('player__btn-play--pause')) {
+                players[i].playBtn.classList.toggle('player__btn-play--pause');
+              }
+            }
             tracks[j].classList.remove('tracks__track-item--active');
             tracks[i].classList.add('tracks__track-item--active');
             this.audio.src = this.audioSource[i];
@@ -67,7 +83,6 @@ class Player {
             this.playBtn.ariaLabel = 'play';
             this.isPlaying = true;
             this.songsCounter = i + 1;
-            console.log(this.songsCounter);
           });
         }
       }
@@ -129,7 +144,6 @@ class Player {
           }
           tracks[this.songsCounter - 1].classList.remove('tracks__track-item--active');
           this.songsCounter++;
-          console.log(this.songsCounter);
           if (this.songsCounter === this.audioSource.length + 1) {
             tracks[this.songsCounter - 2].classList.remove('tracks__track-item--active');
             this.playBtn.classList.remove('player__btn-play--pause');
@@ -167,3 +181,6 @@ const tracksPlayer = new Player(
   document.querySelector('.tracks__play-time'),
   document.querySelector('.tracks__full-time')
 );
+
+players.push(heroPlayer, tracksPlayer);
+console.log(players.length);

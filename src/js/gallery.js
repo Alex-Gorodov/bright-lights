@@ -31,6 +31,3 @@ if (ww < 1150) {
       animPause();
     });
 }
-
-
-console.log(ww);
