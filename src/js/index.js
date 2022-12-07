@@ -9,5 +9,5 @@ navToggle.addEventListener('click', function() {
 window.addEventListener('load', function() {
   setTimeout(() => {
     this.document.querySelector('.equaliser').remove();
-  }, 600);
+  }, 60000);
 });
