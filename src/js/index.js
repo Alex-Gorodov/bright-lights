@@ -10,10 +10,10 @@ navToggle.addEventListener('click', function() {
 window.addEventListener('load', function() {
   const eq = this.document.querySelector('.equaliser');
   setTimeout(() => {
-    eq.style.transform = 'scale(100)';
+    eq.style.transform = 'scale(1000)';
     eq.style.opacity = '0';
     setTimeout(() => {
       eq.remove();
-    }, 1000);
+    }, 2000);
   }, 600);
 });
