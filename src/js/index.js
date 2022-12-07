@@ -6,8 +6,14 @@ navToggle.addEventListener('click', function() {
   nav.classList.toggle('navigation__list--opened');
 });
 
+// Preloader
 window.addEventListener('load', function() {
+  const eq = this.document.querySelector('.equaliser');
   setTimeout(() => {
-    this.document.querySelector('.equaliser').remove();
-  }, 300);
+    eq.style.transform = 'scale(100)';
+    eq.style.opacity = '0';
+    setTimeout(() => {
+      eq.remove();
+    }, 1000);
+  }, 600);
 });
