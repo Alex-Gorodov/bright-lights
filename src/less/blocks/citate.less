@@ -6,6 +6,10 @@
     padding-bottom: 200px;
   }
 
+  @media (max-width: @mobile) {
+    padding-bottom: 20px;
+  }
+
   &__wrapper {
     padding: 50px 80px;
     border: 1px solid @white;
@@ -17,7 +21,8 @@
     }
 
     @media (max-width: @mobile) {
-      padding-bottom: 180px;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
     }
   }
 
@@ -67,8 +72,7 @@
     }
 
     @media (max-width: @mobile) {
-      width: 240px;
-      top: 30%;
+      display: none;
     }
   }
 }

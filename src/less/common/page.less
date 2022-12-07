@@ -11,18 +11,31 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-
-  background-image: url("../img/hero-bg.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   background-color: #1c1b21;
+
+  &__bg {
+    position: fixed;
+    inset: 0;
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../img/hero-bg.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #1c1b21;
+    z-index: -1;
+    transition: 1s;
+
+    &--darken {
+      filter: brightness(0.3);
+    }
+
+    @media (min-width: 1110px) {
+      background-image: url("../img/hero-bg@2x.webp");
+    }
+  }
 
   &__main {
     flex-grow: 1;
-  }
-
-  @media (min-width: 1110px) {
-    background-image: url("../img/hero-bg@2x.webp");
   }
 }

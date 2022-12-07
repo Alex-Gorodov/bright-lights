@@ -1,6 +1,9 @@
 // Burger button
 const navToggle = document.querySelector('.navigation__toggle');
 const nav = document.querySelector('.navigation__list');
+const hero = document.querySelector('.hero');
+const heroBg = document.querySelector('.page__bg');
+const aboutImg = document.querySelector('.about__images-wrapper');
 
 navToggle.addEventListener('click', function() {
   nav.classList.toggle('navigation__list--opened');
@@ -14,6 +17,14 @@ window.addEventListener('load', function() {
     eq.style.opacity = '0';
     setTimeout(() => {
       eq.remove();
-    }, 2000);
+    }, 1000);
   }, 600);
 });
+
+window.onscroll = function() {
+  if(hero.getBoundingClientRect().top <= 200){
+    heroBg.classList.add('page__bg--darken');
+  } else {
+    heroBg.classList.remove('page__bg--darken');
+  }
+};
