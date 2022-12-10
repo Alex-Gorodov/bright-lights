@@ -232,56 +232,58 @@
     </section>
     <section class="section tours" id="tours">
       <h2 class="visually-hidden">Tours shedule</h2>
-      <div class="tours__buttons-wrapper">
-        <button class="tours__button tours__button--prev" aria-label="spin back">
-          <svg class="tours__button-icon" width="20" height="8" fill="currentColor">
-          <use href="img/sprite.svg#tours-arrow"></use>
-          </svg>
-        </button>
-        <button class="tours__button tours__button--forward" aria-label="spin forward">
-          <svg class="tours__button-icon tours__button-icon--forward" width="20" height="8" fill="currentColor">
-          <use href="img/sprite.svg#tours-arrow"></use>
-          </svg>
-        </button>
+      <div class="tours__track">
+        <div class="tours__buttons-wrapper">
+          <button class="tours__button tours__button--prev tours__button--disabled" aria-label="spin back">
+            <svg class="tours__button-icon" width="20" height="8" fill="currentColor">
+            <use href="img/sprite.svg#tours-arrow"></use>
+            </svg>
+          </button>
+          <button class="tours__button tours__button--forward" aria-label="spin forward">
+            <svg class="tours__button-icon tours__button-icon--forward" width="20" height="8" fill="currentColor">
+            <use href="img/sprite.svg#tours-arrow"></use>
+            </svg>
+          </button>
+        </div>
+        <ul class="tours__list">
+          <li class="tours__card tours-card">
+            <picture>
+              <source srcset="img/tours-1.webp 1x, img/tours-1@2x.webp 2x" type="image/webp">
+              <img src="img/tours-1.jpg" width="350" height="280" alt="Party at The Park at Wild Horse Pass" class="tours-card__image" srcset="img/tours-1@2x.jpg 2x">
+            </picture>
+            <div class="tours-card__text-wrapper">
+              <p class="tours-card__city">Chandler, AZ</p>
+              <p class="tours-card__club">The Park at Wild Horse Pass</p>
+              <p class="tours-card__date">Apr 02 2021</p>
+            </div>
+            <a href="#" class="tours-card__button">tickets</a>
+          </li>
+          <li class="tours__card tours-card">
+            <picture>
+              <source srcset="img/tours-2.webp 1x, img/tours-2@2x.webp 2x" type="image/webp">
+              <img src="img/tours-2.jpg" width="350" height="280" alt="Party at The Park at Wild Horse Pass" class="tours-card__image" srcset="img/tours-2@2x.jpg 2x">
+            </picture>
+            <div class="tours-card__text-wrapper">
+              <p class="tours-card__city">Ibiza, IBZ</p>
+              <p class="tours-card__club">Swag Ibiza Club</p>
+              <p class="tours-card__date">Jul 08 2021</p>
+            </div>
+            <a href="#" class="tours-card__button">tickets</a>
+          </li>
+          <li class="tours__card tours-card">
+            <picture>
+              <source srcset="img/tours-3.webp 1x, img/tours-3@2x.webp 2x" type="image/webp">
+              <img src="img/tours-3.jpg" width="350" height="280" alt="Party at The Park at Wild Horse Pass" class="tours-card__image" srcset="img/tours-3@2x.jpg 2x">
+            </picture>
+            <div class="tours-card__text-wrapper">
+              <p class="tours-card__city">Ibiza, IBZ</p>
+              <p class="tours-card__club">El Swing Ibiza</p>
+              <p class="tours-card__date">Jul 10 2021</p>
+            </div>
+            <a href="#" class="tours-card__button">tickets</a>
+          </li>
+        </ul>
       </div>
-      <ul class="tours__list">
-        <li class="tours__card tours-card">
-          <picture>
-            <source srcset="img/tours-1.webp 1x, img/tours-1@2x.webp 2x" type="image/webp">
-            <img src="img/tours-1.jpg" width="350" height="280" alt="Party at The Park at Wild Horse Pass" class="tours-card__image" srcset="img/tours-1@2x.jpg 2x">
-          </picture>
-          <div class="tours-card__text-wrapper">
-            <p class="tours-card__city">Chandler, AZ</p>
-            <p class="tours-card__club">The Park at Wild Horse Pass</p>
-            <p class="tours-card__date">Apr 02 2021</p>
-          </div>
-          <a href="#" class="tours-card__button">tickets</a>
-        </li>
-        <li class="tours__card tours-card">
-          <picture>
-            <source srcset="img/tours-2.webp 1x, img/tours-2@2x.webp 2x" type="image/webp">
-            <img src="img/tours-2.jpg" width="350" height="280" alt="Party at The Park at Wild Horse Pass" class="tours-card__image" srcset="img/tours-2@2x.jpg 2x">
-          </picture>
-          <div class="tours-card__text-wrapper">
-            <p class="tours-card__city">Ibiza, IBZ</p>
-            <p class="tours-card__club">Swag Ibiza Club</p>
-            <p class="tours-card__date">Jul 08 2021</p>
-          </div>
-          <a href="#" class="tours-card__button">tickets</a>
-        </li>
-        <li class="tours__card tours-card">
-          <picture>
-            <source srcset="img/tours-3.webp 1x, img/tours-3@2x.webp 2x" type="image/webp">
-            <img src="img/tours-3.jpg" width="350" height="280" alt="Party at The Park at Wild Horse Pass" class="tours-card__image" srcset="img/tours-3@2x.jpg 2x">
-          </picture>
-          <div class="tours-card__text-wrapper">
-            <p class="tours-card__city">Ibiza, IBZ</p>
-            <p class="tours-card__club">El Swing Ibiza</p>
-            <p class="tours-card__date">Jul 10 2021</p>
-          </div>
-          <a href="#" class="tours-card__button">tickets</a>
-        </li>
-      </ul>
     </section>
   </main>
   <footer class="page__footer footer" id="contacts">
@@ -354,5 +356,6 @@
   <script src="js/index.js"></script>
   <script src="js/player.js"></script>
   <script src="js/gallery.js"></script>
+  <script src="js/slider.js"></script>
 </body>
 </html>
