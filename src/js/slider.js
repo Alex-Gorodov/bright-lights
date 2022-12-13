@@ -6,24 +6,18 @@ const sliderLeft = document.querySelector('.tours__button--prev');
 const sliderRight = document.querySelector('.tours__button--forward');
 let index = 0;
 let position = slides[0].getBoundingClientRect().left;
-const startingTransform = (ww - slideWidth) / 2 - 20;
+let windowWidth = document.body.clientWidth;
+const startingTransform = (windowWidth - slideWidth) / 2 - 20;
 
-console.log(startingTransform);
-
-if (ww < 900) {
+if (windowWidth < 900) {
     slides[index].style.opacity = '1';
     sliderList.style.transform = `translateX(${startingTransform}px)`;
-    window.addEventListener('resize', () => {
-      sliderList.style.transform = `translateX(${startingTransform}px)`;
-    });
 }
 
 sliderLeft.addEventListener('click', () => {
     if (index !== 1) {
-        console.log('HE 1!');
         sliderList.style.transform = `translateX(-${(slideWidth + 30) * (index - 1) - startingTransform}px)`;
     } else {
-        console.log('1!');
         sliderList.style.transform = `translateX(${startingTransform}px)`;
     }
     slides[index-1].style.opacity = '1';
