@@ -13,6 +13,9 @@ console.log(startingTransform);
 if (ww < 900) {
     slides[index].style.opacity = '1';
     sliderList.style.transform = `translateX(${startingTransform}px)`;
+    window.addEventListener('resize', () => {
+      sliderList.style.transform = `translateX(${startingTransform}px)`;
+    });
 }
 
 sliderLeft.addEventListener('click', () => {
