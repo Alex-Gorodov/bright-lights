@@ -71,7 +71,6 @@
   &__list {
     display: flex;
     flex-wrap: nowrap;
-    gap: 30px;
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -89,6 +88,10 @@
 
     @media (max-width: 900px) {
       opacity: 0;
+    }
+
+    &:not(:last-of-type) {
+      margin-right: 30px;
     }
   }
 }
