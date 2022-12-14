@@ -5,7 +5,6 @@ const slides = document.querySelectorAll('.tours__card');
 const sliderLeft = document.querySelector('.tours__button--prev');
 const sliderRight = document.querySelector('.tours__button--forward');
 let index = 0;
-let position = slides[0].getBoundingClientRect().left;
 let windowWidth = document.body.clientWidth;
 const startingTransform = (windowWidth - slideWidth) / 2 - 20;
 
@@ -27,7 +26,6 @@ sliderLeft.addEventListener('click', () => {
     if (index === 0) {
         sliderLeft.classList.add('tours__button--disabled');
     }
-    console.log(index);
 });
 
 sliderRight.addEventListener('click', () => {
@@ -39,5 +37,4 @@ sliderRight.addEventListener('click', () => {
     if (index >= slides.length - 1) {
         sliderRight.classList.add('tours__button--disabled');
     }
-    console.log(index);
 });
