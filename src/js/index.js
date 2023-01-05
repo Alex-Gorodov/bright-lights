@@ -24,7 +24,9 @@ window.addEventListener('load', function() {
 window.onscroll = function() {
   if(hero.getBoundingClientRect().top <= 200){
     heroBg.classList.add('page__bg--darken');
+    document.querySelector('.page').style.backgroundColor = '#08080a';
   } else {
     heroBg.classList.remove('page__bg--darken');
+    document.querySelector('.page').style.backgroundColor = '#1c1b21';
   }
 };
